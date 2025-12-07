@@ -14,3 +14,16 @@ def get_num_chars(book):
             num_chars[char] = 1
 
     return num_chars
+
+def sort_on(items):
+    return items["num"]
+
+def sort_chars(num_chars):
+    sorted = []
+    for (k, v) in num_chars.items():
+        sorted.append({
+            "char": k,
+            "num": v
+        },)
+    sorted.sort(reverse=True, key=sort_on)
+    return sorted
